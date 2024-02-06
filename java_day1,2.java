@@ -1,4 +1,4 @@
- //1-1 ¹®ÀÚ¿­ Ãâ·ÂÇÏ±â
+ //1-1 ë¬¸ìì—´ ì¶œë ¥í•˜ê¸°
 /* 
 import java.util.Scanner;
 
@@ -15,7 +15,7 @@ public class Solution {
 
 
 
-// 1-2 a¿Í b Ãâ·ÂÇÏ±â
+// 1-2 aì™€ b ì¶œë ¥í•˜ê¸°
 
 /*import java.util.Scanner;
 
@@ -28,10 +28,11 @@ public class Solution {
         System.out.println("a = " + a);
                 System.out.println("b = " + b);
     }
-}*/
+
+*/
 
 
-// 1-3 ¹®ÀÚ¿­ ¹İº¹ÇØ¼­ Ãâ·ÂÇÏ±â 
+// 1-3 ë¬¸ìì—´ ë°˜ë³µí•´ì„œ ì¶œë ¥í•˜ê¸° 
 /*import java.util.Scanner;
 
 public class Solution {
@@ -43,11 +44,12 @@ public class Solution {
         for (int i=0; i<n; i++)
             System.out.print(str);
     }
-}*/
+}
+*/
 
 
 
-//1-4 ´ë¼Ò¹®ÀÚ ¹Ù²ã¼­ Ãâ·ÂÇÏ±â
+//1-4 ëŒ€ì†Œë¬¸ì ë°”ê¿”ì„œ ì¶œë ¥í•˜ê¸°
 /*import java.util.Scanner;
 
 public class Solution {
@@ -73,18 +75,19 @@ public class Solution {
 }*/
 
 
-//1-5 Æ¯¼ö¹®ÀÚ Ãâ·ÂÇÏ±â
+//1-5 íŠ¹ìˆ˜ë¬¸ì ì¶œë ¥í•˜ê¸°
 /*import java.util.Scanner;
 
 public class Solution {
     public static void main(String[] args) {
         System.out.print ("!@#$%^&*(\\'\"<>?:;" );
     }
-}*/
+}
+*/
 
 ////////////////////////////////////////////////////////////////////////////////
 
-//2-1 µ¡¼À½Ä Ãâ·ÂÇÏ±â
+//2-1 ë§ì…ˆì‹ ì¶œë ¥í•˜ê¸°
 /*
 import java.util.Scanner;
 
@@ -97,11 +100,12 @@ public class Solution {
 
         System.out.println(a + " + " + b + " = " + c);
     }
-}  */
+} 
+*/
 
 
 
-//2-2  ¹®ÀÚ¿­ ºÙ¿©¼­ Ãâ·ÂÇÏ±â
+//2-2  ë¬¸ìì—´ ë¶™ì—¬ì„œ ì¶œë ¥í•˜ê¸°
 /*import java.util.Scanner;
 
 public class Solution {
@@ -114,14 +118,28 @@ public class Solution {
     }
 }*/
 
-//2-3 ¹®ÀÚ¿­ µ¹¸®±â 
+//2-3 ë¬¸ìì—´ ëŒë¦¬ê¸° 
 
 /*
+import java.util.Scanner;
+
+public class Solution {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+      // system.out.println("ì…ë ¥í•´ì£¼ì„¸ìš”");
+        String a = sc.next();
+        int b =a.length();
+        for(int i=0; i<b; i++) {
+              System.out.println(a.charAt(i));
+        }
+    
+    }
+}
  
   */
 
 
-//2-4 È¦Â¦ ±¸ºĞÇÏ±â 
+//2-4 í™€ì§ êµ¬ë¶„í•˜ê¸° 
 /*
  import java.util.Scanner;
 
@@ -139,7 +157,7 @@ public class Solution {
 }    */
 
 
-//¹®ÀÚ¿­ °ãÃÄ¾²±â 
+//2-5 ë¬¸ìì—´ ê²¹ì³ì“°ê¸° 
 
 /*
  
