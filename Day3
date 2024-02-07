@@ -1,0 +1,74 @@
+3-1
+
+class Solution {
+    public String solution(String str1, String str2) {
+        String answer = "";
+        for(int i = 0; i < str1.length(); i++) 
+    {
+            answer += str1.substring(i, i+1);
+            answer += str2.substring(i, i+1);
+        }
+        return answer;
+    }
+}
+
+==========================
+
+3-2
+
+class Solution {
+    public String solution(String[] arr) {
+        String answer = "";
+        for (int i=0; i < arr.length; i++) {
+              answer += arr[i];
+        }
+                return answer;
+ 
+    }        
+}
+
+============================
+
+
+3-3
+
+class Solution {
+    public String solution(String my_string, int k) {
+        String answer = "";
+        for (int i = 0; i < k; i++) {
+            answer += my_string;
+        }
+        return answer;
+    }
+}
+
+=================================
+3-4
+
+
+class Solution {
+  public int solution(int a, int b) {
+        String key1 = "" + a + b; 
+        String key2 = "" + b + a;
+        int answer1 = Integer.valueOf(key1);
+        int answer2 = Integer.valueOf(key2);
+        if (answer1 > answer2) {
+            return answer1;
+        } else {
+            return answer2;
+        }
+    }
+}
+
+===================================
+3-5
+
+class Solution {
+    public int solution(int a, int b) {
+        int answer = 0;
+        
+        answer=(Integer.parseInt(a+""+b+"")>(2*a*b))?Integer.parseInt(a+""+b+""):(2*a*b);
+        
+        return answer;
+    }
+}
