@@ -1,0 +1,95 @@
+4-1
+
+class Solution {
+    public int solution(int num, int n) {
+        int answer = 0;
+        if (num % n == 0) {
+            answer = 1;
+        }   else {
+            answer = 0;}
+            
+        return answer;
+    }
+}
+
+
+===================================
+
+4-2
+
+
+class Solution {
+    public int solution(int number, int n, int m) {
+        int answer = 0;
+        if (number % n==0 && number % m ==0 ) {
+                   return 1;
+            }  
+                 else {
+               return 0; 
+                 }
+            
+        }
+  
+    }
+
+============================================
+4-3
+
+
+class Solution {
+    public int solution(int n) {
+        int sum = 0;
+           if(n%2 == 1){
+             for(int i=1;i<=n;i+=2){
+                sum += i;
+            }
+        }
+        else{
+            for(int i=2;i<=n;i+=2){
+                sum += i*i;
+            }
+        }
+        return sum;
+     }
+}
+
+=================================================
+4-4
+
+
+
+class Solution {
+        public int solution(String ineq, String eq, int n, int m) {
+                if (ineq.equals(">")) { //문자열 비교 n,m 정수
+            if (eq.equals("=")) {
+                        return n >= m ? 1 : 0; //리턴 쓰자
+                        } else if (eq.equals("!")) {
+                                return n > m ? 1 : 0; //리턴 쓰자
+                        }
+                } else if (ineq.equals("<")) {
+                        if (eq.equals("=")) {
+                                return n <= m ? 1 : 0;  //리턴 쓰자
+                        } else if (eq.equals("!")) {
+                                return n < m ? 1 : 0; //리턴 쓰자
+                        }
+                }
+
+                return 0; 
+        }
+}
+
+====================================================
+4-5
+
+class Solution {
+    public int solution(int a, int b, boolean flag) {
+        int answer = 0;
+        
+        if ( flag == true) {
+            answer = a + b;
+        }else {
+            answer = a-b;
+        }
+        return answer;
+    }
+}
