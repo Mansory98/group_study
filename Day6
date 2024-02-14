@@ -1,0 +1,145 @@
+ 6 - 1
+
+class Solution { // 복습필수
+    public int[] solution(int[] num_list) {
+        int[] answer = new int[num_list.length+1];
+        int i = 0;
+        
+        if(num_list[num_list.length-1] > num_list[num_list.length - 2 ]) {
+            
+            i = num_list[num_list.length-1] - num_list[num_list.length - 2];
+            
+           }else{
+            i = num_list[num_list.length-1]*2;
+            
+            
+        }
+        
+        for(int a = 0; a<num_list.length; a++){
+            answer[a] += num_list[a];     
+        }
+        answer[answer.length-1] = i;
+        return answer;
+    }
+}
+
+
+=====================
+
+6 - 2
+
+class Solution {
+    public int solution(int n, String control) {
+        int answer = n;
+                
+        for(int i=0; i<control.length(); i++){
+            if( control.charAt(i) == 'w' ){
+                
+                answer = answer + 1; //char 문자가 w 일경우 n +1 증가
+              
+            }else if( control.charAt(i) == 's') {
+                
+                answer = answer - 1; //char 문자가 w 일경우 n +1 감소
+              
+       
+            }else if( control.charAt(i) == 'd' ) { 
+                
+                answer = answer + 10; //char 문자가 w 일경우 n +10 증가
+             
+            }else if( control.charAt(i) == 'a' ){
+                
+                answer = answer - 10; //char 문자가 w 일경우 n -10 감소
+               
+            }else 
+            {
+                return answer;
+            }
+        }
+        
+         return answer;
+    }
+}
+
+
+=====================
+
+6 - 3
+
+
+class Solution {
+    public String solution(int[] numLog) {
+		String answer = ""; //answer = 문자열
+        // w : +1   s : -1  d : +10  a : -10
+        
+		for (int i = 1; i < numLog.length; i++) {
+            
+                 if((numLog[i] - numLog[i  -1]) == 1) 
+                     answer += "w";
+            
+			else if((numLog[i] - numLog[i - 1]) == -1)
+                answer += "s";
+            
+			else if((numLog[i] - numLog[i - 1]) == 10) 
+                answer += "d";
+            
+			else if((numLog[i] - numLog[  i - 1]) == -10) 
+                answer += "a";
+		}
+		return answer;
+	}
+}
+
+====================
+
+6 - 4
+
+class Solution {
+    public int[] solution(int[] arr, int[][] queries) {
+        int a,b,c;
+  
+        for(int i=0; i<queries.length; i++){
+            
+            a = queries[i][0];
+            b = queries[i][1];
+            c = arr[a];
+            
+            
+            arr[a] = arr[b];
+            
+            arr[b] = c;
+        }
+        
+             return arr;
+    }
+}
+
+========================
+
+6 - 5
+
+
+class Solution { // *내일 다시 해석해보고 멘토에게 설명듣기*
+    public int[] solution(int[] arr, int[][] queries) {
+        int[] answer = new int[queries.length];
+        
+        
+        for(int i = 0; i < queries.length; i++) {
+            
+            
+            int s = queries[i][0];
+            int e = queries[i][1];
+            int k = queries[i][2];
+            
+            int min = -1;
+            
+            for(int j = s; j <= e; j++) {
+                if (arr[j] > k && (min == -1 || arr[j] < min)) {
+                    min = arr[j];
+                }
+            }
+            
+            answer[i] = min;
+        }
+        return answer;
+    }
+}
