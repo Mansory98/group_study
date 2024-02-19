@@ -1,0 +1,76 @@
+// 메인
+
+package ex01;
+
+public class Main {
+
+    public static void main(String[] args) {
+      
+        Children child = new Children("홍길동", 5, "신반포", "010-7777-8888");
+
+        // 정보 출력
+        child.GiveInfo();
+    }
+}
+
+
+
+////////////////////////////////////////////////////////////////////////////
+
+
+//자식
+
+package ex01;
+
+public class Parent { //이름이랑 나이
+
+	// 매개변수
+	String name;
+	int age;
+
+	// 생성자
+	public Parent(String name, int age) {
+		this.name = name;
+		this.age = age;
+	}
+
+	
+	
+	
+	// 매서드
+	public void SenToChildren() { //children에게 보낼 매서드
+
+		System.out.println("우리 아이의 이름은" + name + "입니다.");
+		System.out.println("우리 아이의 나이는" + age + "살 입니다.");
+	}
+
+}
+
+//////////////////////////////////////////////////////////////////////////
+
+//부모
+
+package ex01;
+
+//부모생성자 parent
+public class Children extends Parent { //주소랑 전화번호
+	//Children은 Parent의 매서드를 상속받는다.
+
+	String adderess;
+	String phone;
+	
+	//생성자
+	public Children(String name, int age, String adderess, String phone){  
+		//@@children 클래스는 상속을 받았기에 생성자에 부모 매개변수 기입이 강제되나??
+		super(name,age); //부모의 매개변수 상속받음
+		this.adderess =adderess; 
+		this.phone = phone;
+	}
+//매서드 
+	public void GiveInfo( ) {//매인으로 보내 최종 출력할 매서드 만들기
+		super.SenToChildren();
+		System.out.println("우리 아이의 주소는" + adderess + "입니다.");
+		System.out.println("우리 아이의 번호는" + phone + "입니다");
+	}
+}
+
