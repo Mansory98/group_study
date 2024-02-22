@@ -1,0 +1,137 @@
+package Ex02_self;
+
+public abstract class Employee {
+
+	public String name; // 필드
+	public String job;
+	public int empNo;
+	public String pay;
+
+	public Employee(String name, String job, int empNo, String pay) {
+		super();
+		this.name = name;
+		this.job = job;
+		this.empNo = empNo;
+		this.pay= pay;
+	}
+
+	// 일반 매서드 (입력문의 기능이 있는 매서드)
+
+	public void same() {
+
+		System.out.println(name + "의 직책은 " + job +"," +"사원번호는 " + empNo + "입니다.");
+		System.out.println("프로젝트를 진행하고 있습니다.");
+
+	}
+
+	// 추상매서드 (입력문이 없는 매서드)
+	
+	public abstract void work (); 
+	public abstract void prom ();
+	public abstract void salary();
+}
+
+
+/////////////////////////////////////////
+
+
+package Ex02_self;
+
+public class Son extends Employee{
+
+	public Son(String name, String job, int empNo, String pay) {
+		super(name, job, empNo, pay);
+		
+		
+		
+	}
+
+	@Override
+	public void work() {
+		System.out.println("Java 개발을 진행중입니다.");
+		
+	}
+
+	@Override
+	public void prom() {
+		System.out.println("내년에 승진하지 못합니다.");
+		
+	}
+
+	@Override
+	public void salary() {
+		System.out.println("과장님의 월급은 3,000,000원 입니다.");
+		
+	}
+	
+	
+
+}
+
+
+////////////////////////////////////////////
+
+
+package Ex02_self;
+
+public class Kim extends Employee{
+
+	public Kim(String name, String job, int empNo, String pay) {
+		super(name, job, empNo, pay);
+	}
+
+	@Override
+	public void work() {
+		System.out.println("React 개발을 진행중입니다.");
+		System.out.println("Java Script 개발을 진행중입니다.");
+		
+	}
+
+	@Override
+	public void prom() {
+		System.out.println("내년에 승진하지 못합니다.");
+	}
+
+	@Override
+	public void salary() {
+		System.out.println("대리님의 월급은 20,000,000원 입니다.");
+		
+	}
+
+}
+
+
+////////////////////////////////////////////////
+
+
+package Ex02_self;
+
+import java.security.PublicKey;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		Employee info1 = new Son("손흥민", "과장",120 , "30,000,000");
+		Employee info2 = new Kim("김민재", "과장", 127, "20,000,000");
+		
+		info1.same();
+		info1.work();
+		info1.prom();
+		info1.salary();
+		
+		
+		info2.same();
+		info2.work();
+		info2.prom();
+		info2.salary();
+	
+
+		
+		
+	}
+
+}
+
+
+
