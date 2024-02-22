@@ -1,0 +1,145 @@
+
+package Ex02;
+
+public abstract class Employee { //부모클래스
+//매개변수
+	String name;
+	String job;
+	int empNo;
+	int pay;
+	
+	
+//생성자
+	public Employee(String name, String job, int empNo, int pay) {
+		super();
+		this.name = name;
+		this.job = job;
+		this.empNo = empNo;
+		this.pay = pay; }
+		
+		//일반 매서드
+		
+	public void emp () { 
+		System.out.println (name + "의 직책은" + job +"사원번호는"+ empNo +"입니다.");
+		System.out.println("프로젝트를 진행하고 있습니다"
+		
+				);
+		
+		
+	}
+	//추상
+	
+	public abstract void work ();
+	public abstract void up ();
+	public abstract void pay ();
+}
+
+
+
+
+============================================================
+
+
+package Ex02;
+
+public class James extends Employee {
+
+	public James(String name, String job, int empNo, int pay) {
+		super(name, job, empNo, pay);
+		
+	
+		
+		
+		
+	}
+
+	@Override
+	public void work() {
+		System.out.println("java 개발을 하고 있습니다.");
+		System.out.println("파이썬 개발을 하고 잇습니다.");
+		
+	}
+
+	@Override
+	public void up() {
+		
+		System.out.println("내년에 승진입니다.");
+	}
+
+	@Override
+	public void pay() {
+		System.out.println( job + "님의 월급은 300만원 입니다.");
+		
+	}
+
+	
+	} 
+
+
+======================================================================
+
+
+
+
+package Ex02;
+
+public class Tomas extends Employee {
+
+
+		
+
+	public Tomas(String name, String job, int empNo, int pay) {
+		super("손흥민", job, empNo, pay);
+	}
+
+
+	@Override
+	public void work() {
+		System.out.println("리액트 개발을 하고 있습니다");
+		System.out.println("자바스크립트 개발을 하고 있습니다.");
+		
+	}
+
+	@Override
+	public void up() {
+		System.out.println("내년에 승진을 못합니다.");
+		
+	}
+
+	@Override
+	public void pay() {
+		System.out.println( job + "님의 월급은 200만원입니다.");
+		
+	}
+	}
+
+
+ ==================================================================
+
+
+package Ex02;
+
+public class Main {
+
+	public static void main(String[] args) {
+		
+		
+			//두 자식에게서 객체를 받아 출력하자
+		
+		Employee emp = new Tomas("손흥민","과장", 120, 3000000);
+		Employee emp2 = new James("김민재", "대리", 127, 2000000);
+		
+		emp.emp();
+		emp.work();
+		emp.up();
+		emp.pay();
+		
+		emp2.emp();
+		emp2.work();
+		emp2.up();
+		emp2.pay();
+	}
+
+}
+
+ 
