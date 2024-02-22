@@ -1,18 +1,19 @@
 
+
 package Ex02;
 
-public abstract class Employee { //부모클래스
+public abstract class Employee { //Son과 Kim 자식 클래스에게 전달할 부모클래스 Employee다.
 //매개변수
-	String name;
+	String name; //최종 출력에 사용될 매개변수를 선언해준다. (이름, 직무, 사원번호, 월급)
 	String job;
 	int empNo;
 	int pay;
 	
 	
 //생성자
-	public Employee(String name, String job, int empNo, int pay) {
+	public Employee(String name, String job, int empNo, int pay) { //매개변수를 토대로 생성자를 만들어준다. 
 		super();
-		this.name = name;
+		this.name = name; //
 		this.job = job;
 		this.empNo = empNo;
 		this.pay = pay; }
@@ -20,80 +21,35 @@ public abstract class Employee { //부모클래스
 		//일반 매서드
 		
 	public void emp () { 
-		System.out.println (name + "의 직책은" + job +"사원번호는"+ empNo +"입니다.");
-		System.out.println("프로젝트를 진행하고 있습니다"
-		
-				);
+		System.out.println (name + "의 직책은 " + job +"이며,"+" 사원번호는 "+ empNo +"입니다."); //Son 과 Kim 의 클래스에서 중복출력할 매서드를 일반 매서드로 만들어준다.
+		System.out.println("프로젝트를 진행하고 있습니다");
 		
 		
 	}
-	//추상
+	//추상매서드
 	
-	public abstract void work ();
-	public abstract void up ();
+	public abstract void work (); //son과 kim의 출력문중 중 따로 출력 해주어야 할 매서드들을 만들어준다. 
+	public abstract void up (); //(중복되는 출력문이 아니기에 입력문이 없는 추상매서드를 만들어 son과 kim에게 '각각'전달해준다.
 	public abstract void pay ();
 }
 
 
+//////////////////////////////////////////////////
 
 
-============================================================
+ package Ex02;
 
-
-package Ex02;
-
-public class James extends Employee {
-
-	public James(String name, String job, int empNo, int pay) {
-		super(name, job, empNo, pay);
-		
-	
-		
-		
-		
-	}
-
-	@Override
-	public void work() {
-		System.out.println("java 개발을 하고 있습니다.");
-		System.out.println("파이썬 개발을 하고 잇습니다.");
-		
-	}
-
-	@Override
-	public void up() {
-		
-		System.out.println("내년에 승진입니다.");
-	}
-
-	@Override
-	public void pay() {
-		System.out.println( job + "님의 월급은 300만원 입니다.");
-		
-	}
-
-	
-	} 
-
-
-======================================================================
-
-
-
-
-package Ex02;
-
-public class Tomas extends Employee {
+public class Son extends Employee {
 
 
 		
 
-	public Tomas(String name, String job, int empNo, int pay) {
-		super("손흥민", job, empNo, pay);
+	public Son(String name, String job, int empNo, int pay) { //부모에게 상속받은 생성자
+		super(name , job, empNo, pay); //부모에게 상속받은 매개변수
 	}
 
 
-	@Override
+	@Override //부모에게 받은 추상매서드를 토대로 '개별의' 매서드와 출력문을 작성해준다. 
 	public void work() {
 		System.out.println("리액트 개발을 하고 있습니다");
 		System.out.println("자바스크립트 개발을 하고 있습니다.");
@@ -114,7 +70,44 @@ public class Tomas extends Employee {
 	}
 
 
- ==================================================================
+////////////////////////////////////////////////////
+
+package Ex02;
+
+public class Kim extends Employee {
+
+	public Kim(String name, String job, int empNo, int pay) {
+		super(name, job, empNo, pay);
+		
+	
+		
+		
+		
+	}
+
+	@Override
+	public void work() {
+		System.out.println("java 개발을 하고 있습니다.");
+		System.out.println("파이썬 개발을 하고 있습니다.");
+		
+	}
+
+	@Override
+	public void up() {
+		
+		System.out.println("내년에 승진입니다.");
+	}
+
+	@Override
+	public void pay() {
+		System.out.println( job + "님의 월급은 300만원 입니다.");
+		
+	}
+
+	
+	} 
+
+///////////////////////////////////////////////////////////
 
 
 package Ex02;
@@ -125,12 +118,13 @@ public class Main {
 		
 		
 			//두 자식에게서 객체를 받아 출력하자
+		//다형성을 활용한 객체생성
 		
-		Employee emp = new Tomas("손흥민","과장", 120, 3000000);
-		Employee emp2 = new James("김민재", "대리", 127, 2000000);
+		Employee emp = new Son("손흥민","과장", 120, 3000000); //이 과정에 대해 다시 질문
+		Employee emp2 = new Kim("김민재", "대리", 127, 2000000);
 		
-		emp.emp();
-		emp.work();
+		emp.emp(); //Employee에서 가져온 일반매서드에 위의 값을 넣어 불러오자
+		emp.work(); //Employee(부모)가 추상매서드 전달 => Son(자식)에서 매서드에 값 할당 => Main에서 최종 출력 
 		emp.up();
 		emp.pay();
 		
@@ -142,4 +136,4 @@ public class Main {
 
 }
 
- 
+
