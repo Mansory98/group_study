@@ -1,0 +1,53 @@
+package Min;
+
+class Product{
+
+	private int mNum = 0, mPrice = 0;
+	private String mName = null, mWhere;
+	private static int count = 0;
+	
+	public Product( String name , String where, int price) {
+		this.mPrice = price;
+		this.mName = name;
+		this.mWhere = where;
+		mNum = count + 1200;
+		count++;
+	}
+
+	public static int getCount() {
+		return count;
+	}
+	
+	public String toString() {
+		return mNum +"    " +mName+"    "+ mWhere+"   " +mPrice + "원";
+	}
+	
+}
+
+
+////////////////////////////////////////////////////////////////
+
+
+package Min;
+
+
+
+public class Main {
+
+	public static void main(String[] args) {
+
+		
+		
+		Product product1 = new Product("새우깡","농심(주)", 1900);
+		Product product2 = new Product("빼뺴로", "롯데과자", 2200);
+		Product product3 = new Product("먹태깡", "농심(주)", 2500);
+		System.out.println(product1.toString());
+		System.out.println(product2.toString());
+		System.out.println(product3.toString());
+		System.out.println("---------------------------");
+		System.out.println("출고상품:"+Product.getCount());
+		System.out.println("---------------------------");
+		}
+		
+
+	}
