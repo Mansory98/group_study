@@ -1,0 +1,19 @@
+function filterHighScorers(students) {
+  let highScorers = [];
+  for (let i = 0; i < students.length; i++) {
+    if (students[i].score >= 80) {
+      highScorers.push(students[i]);
+    }
+  }
+  return highScorers;
+}
+
+const students = [
+  { name: '홍길동', score: 74 },
+  { name: '손흥민', score: 98 },
+  { name: '이강인', score: 81 },
+  { name: '황희찬', score: 68 },
+];
+
+console.log(filterHighScorers(students)); 
+// [ { name: '손흥민', score: 98 }, { name: '이강인', score: 81 } ]
