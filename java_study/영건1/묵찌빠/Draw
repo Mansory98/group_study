@@ -1,0 +1,44 @@
+package Younggun;
+
+public class Draw {
+
+	String me;
+	String com;
+	
+	
+	public Draw(String me, String com) {
+		super();
+		this.me = me;
+		this.com = com;
+	}
+	
+	//비겼을 때 매소드 만들기
+	public void draw() {
+		if(me.equals("묵") && com.equals("찌")) {
+			System.out.println("못이겼습니다");
+		}
+		
+		else if(me.equals("묵") && com.equals("빠")) {
+			System.out.println("못이겼습니다");
+		}
+		
+	
+		else if(me.equals("찌") && com.equals("묵")) {
+			System.out.println("못이겼습니다");
+		}
+		
+		else if(me.equals("찌") && com.equals("빠")) {
+			System.out.println("못이겼습니다");
+		}
+		
+		else if(me.equals("빠") && com.equals("묵")) {
+			System.out.println("못이겼습니다");
+		}
+		else if(me.equals("빠") && com.equals("찌")) {
+			System.out.println("못이겼습니다");
+		}
+		
+		
+	
+}
+}
