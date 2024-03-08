@@ -1,0 +1,23 @@
+package Younggun;
+
+public class Win {
+    String me;
+    String com;
+
+    public Win(String me, String com) {
+        super();
+        this.me = me;
+        this.com = com;
+    }
+
+    // 수정: 플레이어가 이겼는지 여부를 반환하는 메서드로 변경
+    public boolean win() {
+        if ((me.equals("묵") && com.equals("묵")) ||
+            (me.equals("찌") && com.equals("찌")) ||
+            (me.equals("빠") && com.equals("빠"))) {
+            
+            return true;
+        }
+        return false;
+    }
+}
