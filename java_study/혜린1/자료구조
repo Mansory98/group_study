@@ -1,0 +1,43 @@
+import java.util.ArrayList;
+
+public class Queue {
+
+    private ArrayList<Integer> queue;
+
+    public Queue() {
+        this.queue = new ArrayList<>();
+    }
+
+    public void push(int item) {
+        queue.add(item);
+    }
+
+    public Integer pop() {
+        if (isEmpty())
+            return null;
+        return queue.remove(0);
+    }
+
+    public boolean isEmpty() {
+        return queue.isEmpty();
+    }
+
+    public static void main(String[] args) {
+        Queue q = new Queue();
+        System.out.println("큐에 원소 추가");
+        System.out.println("--------------");
+        q.push(0);
+        q.push(1);
+        q.push(2);
+
+        System.out.println("큐에서 원소 제거");
+        System.out.println("--------------");
+        System.out.println(q.pop());
+        System.out.println(q.pop());
+        System.out.println(q.pop());
+        System.out.println();
+
+        System.out.println("큐에서 원소 제거");
+        System.out.println("--------------");
+    }
+}
