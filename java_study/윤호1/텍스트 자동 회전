@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #span {
+            background-color: yellow;
+            display: inline-block;
+            cursor: pointer;
+            color: red;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <h3>텍스트가 자동 회전하며, 마우스로 클릭하면 중단합니다.</h3>
+    <hr>
+    <div><span id="span">자동 회전하는 텍스트입니다.</span></div>
+    <script>
+        let rotate = document.getElementById("span");
+        let interval = setInterval(Spin, 100); //100ms 간격으로interval
+
+        // 글자 돌리기 Function 
+        function Spin() {
+            let currentText = rotate.innerHTML;
+            rotate.innerHTML = currentText.substring(1) + currentText.substring(0, 1);
+            // subctrin(1)은 H , scubstrin(0,1)은 elllo 반환
+        }
+
+        // onclick    실행 멈춤
+        rotate.onclick = function () {
+
+            clearInterval(interval) //onclick시 setinterval 실행을 멈춤
+        } ;
+
+
+
+
+    </script>
+</body>
+
+</html>
