@@ -1,0 +1,14 @@
+# print(pal)
+
+def pal():
+    my = input('입력 ->')
+    reverse = my[::-1]
+    
+    if my == reverse :
+        return 1
+    else:
+        return 0
+
+result = pal()
+print('출력 ->' , result)
+
