@@ -1,0 +1,11 @@
+```python
+
+my = int(input('숫자를 입력하세요'))
+
+for i in range(2, my+1):    #1을 제외한 my까지 for 돌도록 range 설정 
+    for j in range(2, i+1): 
+       if i == j :   # i 가 소수인경우
+           print(i)
+       elif i%j == 0: # i를 j로 나눴을 때 몫이 0이면 소수가 아님. 
+           break
+```
