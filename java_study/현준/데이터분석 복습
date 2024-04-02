@@ -1,0 +1,69 @@
+import pandas as pd
+import numpy as np
+# 1. 다음 데이터를 사용하여 DataFrame을 생성하세요.
+data = {'Name': ['John', 'Anna', 'Peter', 'Linda'],
+        'Age': [28, 35, 42, 29],
+        'City': ['New York', 'Paris', 'London', 'San Francisco']}
+
+df = pd.DataFrame(data)
+
+# 2. 위에서 생성한 데이터프레임에 'Gender' 열을 추가하고 각 행에 'Male' 또는 'Female' 값을 할당하세요.
+
+df['Gender'] = ['Male','Female','Male','Female']
+
+# 3. 위에서 생성한 데이터프레임의 인덱스를 'A', 'B', 'C', 'D'로 설정하세요.
+
+df.index = ['A', 'B', 'C', 'D']
+
+# 4. 위에서 생성한 데이터프레임에서 'Name' 열만 추출하여 출력하세요.
+
+result = df['Name']
+print(result)
+
+# 5. 위에서 생성한 데이터프레임에서 'Age' 열의 값이 30 이상인 행들만 필터링하여 출력하세요.
+
+Filter_Age = df[df['Age'] > 30]
+print(Filter_Age)
+
+
+# 6. 다음 두 개의 데이터프레임을 병합하세요.
+df1 = pd.DataFrame({'A': [1, 2, 3], 'B': [4, 5, 6]})
+df2 = pd.DataFrame({'A': [7, 8, 9], 'B': [10, 11, 12]})
+
+
+concat_df = pd.concat([df1, df2])
+print(concat_df)
+
+
+# 7. 다음 데이터프레임을 'City' 열을 기준으로 그룹화하여 'Age' 열의 평균을 출력하세요.
+avg_df = df.groupby('City')['Age'].mean() #그룹바이로 묶고 .mean()으로 평균
+print(avg_df)
+
+
+
+# 8. 다음 데이터프레임을 'Age' 열을 기준으로 내림차순으로 정렬하세요.
+df = pd.DataFrame({'Name': ['John', 'Anna', 'Peter', 'Linda'],
+                   'Age': [28, 35, 42, 29],
+                   'City': ['New York', 'Paris', 'London', 'San Francisco']})
+
+sort_df = df.sort_values(by='Age', ascending=False)  #False: 내림차 True: 오름차
+print(sort_df)
+
+
+
+
+# 9. 다음 데이터프레임에서 nan값을 0 으로 채워넣으세요.
+df = pd.DataFrame({'A': [1, np.nan, 3, np.nan],
+                   'B': [np.nan, 5, np.nan, 8],
+                   'C': [10, 11, 12, 13]})
+
+filled_df = df.fillna(0)  # fillna(0) nan값 0으로 채우기
+print(filled_df)
+
+
+
+
+# 10. 다음 데이터프레임을 이용하여 'Date'를 인덱스로, 'City'를 컬럼으로 하여 피벗테이블을 생성하세요.
+df = pd.DataFrame({'Date': ['2022-01-01', '2022-01-01', '2022-01-02', '2022-01-02'],
+                   'City': ['Seoul', 'Busan', 'Seoul', 'Busan'],
+                   'Value': [100, 200, 150, 250]})
