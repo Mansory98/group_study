@@ -35,7 +35,7 @@ print(f'2014~2016 졸음운전 교통사고 평균건수 = {acc_avg}건')
 acc_total = [data1['사고(건)'].sum(), data2['사고(건)'].sum(), data3['사고(건)'].sum()]
 
 plt.figure(figsize=(6, 5))
-plt.bar(total, acc_total, color='green')
+plt.bar(total, acc_total, color='red')
 plt.title('연도별 졸음운전 교통사고 발생 건수의 추이')
 plt.xlabel('연도')
 plt.ylabel('사고건수')
