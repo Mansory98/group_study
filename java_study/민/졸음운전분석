@@ -42,4 +42,33 @@ plt.ylabel('사고건수')
 plt.show()
 
 ##########################################
+
 # 3. 졸음운전 교통사고 발생 건수가 가장 많은 연도와 해당 연도의 월별 사고 발생 추이 시각화하기
+# 너무 어려운데..  
+
+# 가장 많은 사고 건수를 가진 연도 찾기
+max_acc_year = max([(data1['사고(건)'].sum(), 2014), 
+                    (data2['사고(건)'].sum(), 2015), 
+                    (data3['사고(건)'].sum(), 2016)], key=lambda x: x[0])[1]
+
+# 해당 연도의 데이터를 선택
+max_acc_data = None
+if max_acc_year == 2014:
+    max_acc_data = data1
+elif max_acc_year == 2015:
+    max_acc_data = data2
+else:
+    max_acc_data = data3
+
+# 월별 사고 발생 추이 분석
+monthly_accidents = max_acc_data.groupby('월')['사고(건)'].sum()
+
+# 시각화
+plt.figure(figsize=(8, 6))
+plt.plot(monthly_accidents.index, monthly_accidents.values, marker='o', color='red')
+plt.title(f'{max_acc_year}년 월별 졸음운전 교통사고 발생 추이')
+plt.xlabel('월')
+plt.ylabel('사고 건수')
+plt.xticks(monthly_accidents.index)
+plt.grid(True)
+plt.show()
