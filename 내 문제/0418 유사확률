@@ -10,7 +10,7 @@ text_data = "엄마는 항상 인생은 상자와 같은 거라고 말씀하셨�
 #  형태소 분석 후 명사 단어만 추출
 
 # Word2Vec 모델 훈련
-model = Word2Vec([nouns], vector_size=100, window=5, min_count=1, sg=0)
+model = Word2Vec([  ], vector_size=100, window=5, min_count=1, sg=0)
 
 # '인생'와 가장 유사한 3개의 단어와 유사확률을 출력하는 코드 완성하기
 
