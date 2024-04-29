@@ -1,0 +1,57 @@
+
+!mkdir ./templates
+%%writefile ./templates/Ex01.html
+<!DOCTYPE html>
+<html>
+<body>
+    <h2> title : {{ title }}</h2>
+    <h5> data : {{ data }}</h5>
+</body>
+</html>
+
+#####################
+
+import json
+from flask import Flask, render_template
+app = Flask(__name__)
+
+json_data = '''{
+    "main": {
+        "title":"main",
+        "data":"maindata"
+    },
+    "stage1": {
+        "title":"stage1",
+        "data":"stage1data"
+    },
+    "stage2": {
+        "title":"stage2",
+        "data":"stage2data"
+    }
+}'''
+
+json_data = json.loads(json_data)
+
+@app.route('/')
+def main():
+    # 메인 페이지에서는 main 데이터를 사용
+    title = json_data['main']['title']
+    data = json_data['main']['data']
+    return render_template('Ex01.html', title=title, data=data)
+
+@app.route('/stage1')
+def stage1():
+    # stage1 페이지에서는 stage1 데이터를 사용
+    title = json_data['stage1']['title']
+    data = json_data['stage1']['data']
+    return render_template('Ex01.html', title=title, data=data)
+
+@app.route('/stage2')
+def stage2():
+    # stage2 페이지에서는 stage2 데이터를 사용
+    title = json_data['stage2']['title']
+    data = json_data['stage2']['data']
+    return render_template('Ex01.html', title=title, data=data)
+
+if __name__ == '__main__':
+    app.run()
