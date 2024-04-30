@@ -1,0 +1,104 @@
+< 문제 : jupyter돌리지말고 답 입력해보기 >
+
+
+
+< 1 >
+e = [1, 'a', [5,6,7,[7,8,9,[10,11,12]]], print, (), {}, {1}] 
+
+1) print(e[2][3][3][1]) = 11
+
+2) print(type(e[0]), type(e[1]), type(e[2]), type(e[3]), type(e[4]), type(e[5]), type(e[6])) 
+= <class 'int'> <class 'str'> <class 'list'> <class 'builtin_function_or_method'> <class 'tuple'> <class 'dict'> <class 'set'> <- 빈칸채우기
+
+3) print(e[0] + e[1]) = error인 이유?
+정수와 문자열은 타입이 달라서 연산자를 사용할 수 없다
+
+
+< 2 >
+a = [1,2,3,4,5,]
+
+1) print(a[0:], a[:5]) = [1, 2, 3, 4, 5] [1, 2, 3, 4, 5]
+처음부터 끝까지 , 처음부터 5번째까지 추출
+
+2) print(type('12345'[0:2]), '12345'[0:2]) = str, 12
+
+
+
+< 3 >
+다차원슬라이싱 - 중첩된 list자료형의 슬라이싱
+a = [1,2,3,['a','b','c'],4,5]
+
+1) print(a[2:5]) [3,['1]]
+*오답 [3, ['a', 'b', 'c'], 4]
+
+2) print(a[3:4]) 
+[['a', 'b' , 'c']]
+
+3) print(a[3:4][2]) = 무슨error?
+* 오답 
+ a[3:4]는 리스트 내부의 리스트를 원소로 가지고 있고, 그 원소는 인덱스 0부터 1까지 존재합니다.
+ 따라서 a[3:4][2]는 존재하지 않는 인덱스에 접근하므로 IndexError가 발생합니다.
+
+
+< 4 >
+a = [1,2,3]
+a[1:2] = ['x', 'y', 'z']
+
+print(a) = [1, 'x', 'y', 'z', 3]
+
+
+
+< 5 >
+sample = 'show how to index into sequences'.split()
+
+1) print(sample[::2]) = ['show', 'to', 'into', 'sequences']
+정방향 두칸씩 슬라이싱
+2) print(sample[::-2]) = ['sequences', 'into', 'how', 'show']
+역방향 두칸씩 슬라이싱
+
+
+< 6 >
+
+c = ['x','z','y', 1,4,3,2]
+
+c.sort() = Error?
+정수와 문자열은 합쳐질 수 없음
+
+
+
+< 7 >
+a = [1,2,'a',3,'a','b']
+
+1) print(a.index('a', 3)) = 4
+3번인덱스 뒤의 a 를 찾아냄
+
+2) print(a.index('a', 3, 1000)) = 4
+3번 인덱스 뒤의 1000번 안쪽의 a 출력 
+
+
+< 8 >
+a = [1,2,3,4]
+
+print(a.pop(), a) =. (4,[1,2,3])
+* 오답
+
+
+< 9 >
+a = [1,2,3]
+
+1) a.append([4,5])
+print(a) = [1,2,3,[4,5]]
+append는 묶여서 들어감
+
+2) a.extend([4,5])
+print(a) = [1,2,3,4,5]
+extend는 아님
+
+3) a.extend('hello')
+print(a) = [1, 2, 3, 4, 5, 'h', 'e', 'l', 'l', 'o']
+
+4) a.extend({'name':'홍길동', 'age':1000}) # dict 자료형, key만 확장
+print(a) = [1, 2, 3, 4, 5, 'h', 'e', 'l', 'l', 'o', 'name', 'age']
+* 오답 : 딕셔너리는 value값을 제외하고 key값만 리스트 형태로 합쳐짐
+
+
